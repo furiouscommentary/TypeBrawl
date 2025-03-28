@@ -23,7 +23,7 @@ A **real-time multiplayer typing battle** game inspired by MonkeyType, featuring
 - **Service Workers** – Background sync & offline support
 
 ### **Backend:**
-- **Node.js (uWebSockets.js or Fastify)** – High-performance WebSocket server
+- **Node.js (Express + ws)** – WebSocket & API server
 - **Redis (Pub/Sub & Leaderboards)** – Ultra-fast real-time updates
 - **PostgreSQL (pg module)** – Persistent storage for game history
 - **Kafka** – Event-driven architecture for analytics
@@ -39,7 +39,7 @@ A **real-time multiplayer typing battle** game inspired by MonkeyType, featuring
 ## 📂 Folder Structure
 ```
 /TypeBrawl
-│── backend/                # Node.js WebSocket Server  
+│── backend/                # Node.js WebSocket & API Server  
 │   ├── src/
 │   │   ├── controllers/    # Game logic & matchmaking  
 │   │   ├── services/       # Prompt generation, leaderboard handling  
@@ -47,6 +47,7 @@ A **real-time multiplayer typing battle** game inspired by MonkeyType, featuring
 │   │   ├── database.js     # Raw PostgreSQL (pg module) connection  
 │   │   ├── redis.js        # Redis connection  
 │   │   ├── index.js        # WebSocket server  
+│   │   ├── api.js          # Express API routes  
 │   ├── Dockerfile          
 │── frontend/               # React Client  
 │   ├── src/  
@@ -101,4 +102,3 @@ docker-compose up -d
 MIT
 
 ---
-
